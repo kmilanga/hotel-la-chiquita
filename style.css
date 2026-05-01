@@ -1,0 +1,1120 @@
+/* --- VARIABLES Y RESET --- */
+:root {
+    --blanco-hueso: #F5F2ED;
+    --cobre: #B87333;
+    --cobre-hover: #D4A373;
+    --madera: #2D1E17;
+    --texto: #4A4A4A;
+    --transicion: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--blanco-hueso);
+    color: var(--texto);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--madera);
+    letter-spacing: 1px;
+}
+
+/* --- NAVEGACIÓN --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(245, 242, 237, 0.95);
+    border-bottom: 1px solid rgba(184, 115, 51, 0.1);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: var(--madera);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--madera);
+    margin-left: 2.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: var(--transicion);
+}
+
+.nav-links a:hover {
+    color: var(--cobre);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(45, 30, 23, 0.3), rgba(45, 30, 23, 0.3)),
+        url('https://hotelachiquita.es/wp-content/uploads/2024/04/recepcion005_bien.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* En móvil se desactiva el parallax */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--blanco-hueso);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--blanco-hueso);
+}
+
+/* --- BOTONES --- */
+.cta-button {
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--cobre);
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: var(--transicion);
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: var(--cobre);
+    transform: translateY(-3px);
+}
+
+.cta-button.dark {
+    border-color: var(--madera);
+    color: var(--madera);
+}
+
+.cta-button.dark:hover {
+    background: var(--madera);
+    color: white;
+}
+
+/* --- HISTORIA --- */
+.history {
+    padding: 8rem 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.history-image {
+    height: 600px;
+    background: url('https://hotelachiquita.es/wp-content/uploads/2024/11/recpcion-la-chuita-1536x1025.jpg');
+    background-size: cover;
+    border: 1px solid var(--cobre);
+    position: relative;
+}
+
+.history-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.link-styled {
+    color: var(--cobre);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- HABITACIONES (GRID 4 COLUMNAS) --- */
+.rooms {
+    padding: 8rem 5%;
+    background-color: var(--madera);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    color: var(--blanco-hueso);
+    font-size: 3rem;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background: var(--cobre);
+    margin: 1rem auto;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.room-card {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.room-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.room-card:hover img {
+    transform: scale(1.1);
+}
+
+.room-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 3rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(45, 30, 23, 0.95) 0%, rgba(45, 30, 23, 0.4) 70%, transparent 100%);
+    color: white;
+}
+
+.room-info h3 {
+    color: var(--blanco-hueso);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.room-info p {
+    font-size: 0.85rem;
+    font-weight: 200;
+    opacity: 0.8;
+}
+
+/* --- GASTRONOMÍA --- */
+.dining {
+    padding: 10rem 10%;
+    text-align: center;
+    background: var(--blanco-hueso);
+}
+
+.gold-text {
+    color: #8B5A1E;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 600;
+}
+
+.dining h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.dining p {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: #777;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--madera);
+    color: var(--blanco-hueso);
+    padding: 5rem 10% 2rem;
+}
+
+.contact-details {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.footer-bottom {
+    margin-top: 4rem;
+    font-size: 0.7rem;
+    color: #aaa;
+    border-top: 1px solid #f9f9f9;
+    padding-top: 2rem;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .room-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .history {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .room-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-image {
+        height: 400px;
+    }
+}
+
+/* --- AJUSTES GASTRONOMÍA (Simetría con Historia) --- */
+
+/* Clase para invertir el orden en escritorio y mantener espacio */
+.dining-alt {
+    background-color: white;
+    /* Un ligero cambio de tono para diferenciar secciones */
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+/* Imagen específica para Gastronomía */
+.dining-image {
+    background: url('https://hotelachiquita.es/wp-content/uploads/2022/04/117356022_167276308227822_1098824861311466617_n-768x1024.jpg');
+    /* Imagen de mesa gourmet/patio */
+    background-size: cover;
+    background-position: center;
+    box-shadow: -20px 20px 0px var(--cobre);
+    /* Sombra hacia el otro lado para dinamismo */
+}
+
+/* Responsive para la sección invertida */
+@media (max-width: 768px) {
+    .dining-alt {
+        display: flex;
+        flex-direction: column-reverse;
+        /* En móvil la imagen vuelve a estar arriba o abajo según prefieras */
+        padding: 5rem 10%;
+    }
+
+    .dining-image {
+        height: 400px;
+        margin-top: 2rem;
+    }
+}
+
+/* --- ANIMACIONES DE REVELADO --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto Parallax en las imágenes de Historia y Gastronomía */
+.history-image {
+    transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active .history-image {
+    transform: scale(1.02);
+}
+
+/* Ajuste específico para la Gastronomía (Simetría) */
+.dining-alt {
+    background-color: #FFF;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dining-image {
+    background-image: url('https://hotelachiquita.es/wp-content/uploads/2022/04/117356022_167276308227822_1098824861311466617_n-768x1024.jpg');
+    box-shadow: -20px 20px 0px var(--cobre);
+    /* Sombra inversa a la de Historia */
+}
+
+@media (max-width: 768px) {
+    .dining-alt {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+/* --- BARRA DE RESERVA --- */
+.booking-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    padding: 0 5%;
+    position: relative;
+    z-index: 200;
+    /* Subimos de 100 a 200 */
+    background: transparent;
+}
+
+.booking-bar {
+    background: white;
+    /* Confirma que sigue siendo white */
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 20px 40px rgba(45, 30, 23, 0.1);
+    border: 1px solid rgba(184, 115, 51, 0.2);
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    /* Añade esto */
+    z-index: 200;
+    /* Añade esto */
+}
+
+.booking-field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.booking-field label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cobre);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.booking-field input,
+.booking-field select {
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--madera);
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.booking-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(184, 115, 51, 0.2);
+}
+
+.booking-submit {
+    background: var(--madera);
+    color: var(--blanco-hueso);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.booking-submit:hover {
+    background: var(--cobre);
+    transform: translateY(-2px);
+}
+
+/* Responsive para la barra */
+@media (max-width: 900px) {
+    .booking-bar {
+        flex-direction: column;
+        padding: 2rem;
+        margin-top: 0;
+    }
+
+    .booking-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .booking-bar-container {
+        margin-top: 2rem;
+    }
+}
+
+/* Mejora la suavidad general */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+    /* Optimiza el rendimiento */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Evita clics accidentales mientras el botón está en "BUSCANDO..." */
+.booking-submit:disabled {
+    cursor: not-allowed;
+}
+
+/* Añade un margen superior al desplazarse por anclaje */
+#checkin {
+    scroll-margin-top: 120px;
+    /* Ajusta este valor según la altura de tu menú */
+}
+
+/* Si quieres que se aplique a todas las secciones del menú */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column h3 {
+    color: var(--cobre);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.footer-column p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--blanco-hueso);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: var(--transicion);
+}
+
+.footer-links a:hover {
+    color: var(--cobre);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(245, 242, 237, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+}
+
+.faq {
+    padding: 8rem 10%;
+    background: #F5F2ED;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--cobre);
+}
+
+.faq-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.payment-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 0.6rem;
+    opacity: 0.6;
+}
+
+.payment-icons img {
+    height: 20px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.payment-icons img:hover {
+    filter: grayscale(0%);
+}
+
+.trust-badges {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.trust-badges img {
+    height: 30px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.trust-badges img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.rooms-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    /* Margen inferior para separarlo de las tarjetas */
+    padding: 0 5%;
+}
+
+.rooms-description {
+    color: var(--blanco-hueso);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 200;
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+.rooms-intro .gold-text {
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .rooms-description {
+        font-size: 1rem;
+    }
+}
+
+.reviews {
+    padding: 8rem 10%;
+    background-color: var(--blanco-hueso);
+}
+
+.rating-summary {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.rating-summary .score {
+    font-size: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    color: var(--madera);
+}
+
+.rating-summary .stars {
+    color: var(--cobre);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.review-card {
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid rgba(184, 115, 51, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: var(--transicion);
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cobre);
+}
+
+.review-source {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cobre);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.review-text {
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.review-author {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--madera);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews {
+        padding: 5rem 5%;
+    }
+}
+
+#faq h2 {
+    color: var(--madera);
+    /* O el color que prefieras, por ejemplo: #B87333 */
+}
+
+.lang-switch {
+    font-weight: bold;
+    color: var(--cobre) !important;
+    border: 1px solid var(--cobre);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 1.5rem;
+}
+
+.lang-switch:hover {
+    background: var(--cobre);
+    color: white !important;
+}
+
+/* Ajuste para que el logo no deforme la barra de navegación */
+.logo img {
+    display: block;
+    max-height: 50px;
+    /* Ajusta según el diseño de tu logo */
+    width: auto;
+    transition: var(--transicion);
+}
+
+/* Efecto visual al pasar el ratón */
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 40px;
+    }
+}
+
+/* --- HAMBURGER MENU --- */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--madera);
+    transition: var(--transicion);
+    transform-origin: center;
+}
+
+/* Animación a X al abrir */
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--blanco-hueso);
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+}
+
+/* --- WHATSAPP FLOTANTE --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    transition: var(--transicion);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* --- COOKIE BANNER --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--madera);
+    color: var(--blanco-hueso);
+    padding: 1.2rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    z-index: 99999;
+    font-size: 0.85rem;
+    border-top: 2px solid var(--cobre);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.cookie-banner.visible {
+    transform: translateY(0);
+}
+
+.cookie-banner a {
+    color: var(--cobre);
+    text-decoration: underline;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.cookie-accept,
+.cookie-reject {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.cookie-accept {
+    background: var(--cobre);
+    color: white;
+}
+
+.cookie-accept:hover {
+    background: var(--cobre-hover);
+}
+
+.cookie-reject {
+    background: transparent;
+    color: var(--blanco-hueso);
+    border: 1px solid rgba(245, 242, 237, 0.3);
+}
+
+.cookie-reject:hover {
+    border-color: var(--blanco-hueso);
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+/* --- FLATPICKR — Personalización Hotel La Chiquita --- */
+.flatpickr-calendar {
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid rgba(184, 115, 51, 0.3);
+    box-shadow: 0 20px 40px rgba(45, 30, 23, 0.15);
+    border-radius: 0;
+}
+
+.flatpickr-month,
+.flatpickr-weekdays {
+    background: var(--madera);
+    color: var(--blanco-hueso);
+}
+
+.flatpickr-weekday {
+    color: var(--cobre) !important;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.flatpickr-day {
+    font-size: 0.8rem;
+    border-radius: 0;
+    color: var(--madera);
+}
+
+.flatpickr-day:hover {
+    background: rgba(184, 115, 51, 0.15);
+    border-color: var(--cobre);
+}
+
+/* Día seleccionado (entrada y salida) */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: var(--madera) !important;
+    border-color: var(--madera) !important;
+    color: var(--blanco-hueso) !important;
+    border-radius: 0 !important;
+}
+
+/* Rango entre fechas */
+.flatpickr-day.inRange {
+    background: rgba(184, 115, 51, 0.12) !important;
+    border-color: rgba(184, 115, 51, 0.2) !important;
+    color: var(--madera);
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Día de hoy */
+.flatpickr-day.today {
+    border-color: var(--cobre) !important;
+    color: var(--cobre) !important;
+    font-weight: 600;
+}
+
+.flatpickr-day.today:hover {
+    background: var(--cobre) !important;
+    color: white !important;
+}
+
+/* Navegación del mes */
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    fill: var(--blanco-hueso);
+}
+
+.flatpickr-prev-month:hover svg,
+.flatpickr-next-month:hover svg {
+    fill: var(--cobre);
+}
+
+.flatpickr-current-month {
+    color: var(--blanco-hueso);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Input dentro del booking bar */
+#dateRange {
+    cursor: pointer;
+    width: 100%;
+}
+
+/* --- SKIP LINK --- */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--cobre);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    z-index: 99999;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* --- BACK TO TOP BUTTON --- */
+.back-to-top {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.5px solid var(--cobre);
+    color: var(--cobre);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    transition: var(--transicion);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9998;
+}
+
+.back-to-top.show {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--cobre);
+    color: var(--blanco-hueso);
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+.back-to-top:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 5.5rem;
+        right: 1.5rem;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+}
