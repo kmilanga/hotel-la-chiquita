@@ -27,7 +27,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
 
-        // Denegamos cookies por defecto hasta que el usuario pulse "Aceptar"
+        // Deniega cookies por defecto hasta que el usuario pulse "Aceptar"
         gtag('consent', 'default', {
             'analytics_storage': 'denied',
             'ad_storage': 'denied'
@@ -299,6 +299,7 @@
             <a href="#reserva">Reserva</a>
             <a href="#habitaciones">Habitaciones</a>
             <a href="#restaurante">La Chiquita de Quini</a>
+            <a href="#faq">FAQ</a>
             <a href="#contacto">Contacto</a>
             <a href="index_en.html" class="lang-switch">EN</a>
         </div>
@@ -360,9 +361,29 @@
             <p><b>Despierta donde la historia cobra vida.</b> En Alojamientos La Chiquita, no solo te hospedas en
                 Córdoba;
                 te sumerges en ella. Ubicado en una casa histórica rehabilitada, nuestro hotel boutique es el
-                equilibrio perfecto entre el <b>legado tradicional cordobés</b> y el <b>confort contemporáneo.</b></p>
-            <p>Cada rincón del Hotel La Chiquita ha sido restaurado respetando los materiales originales:
-                maderas nobles, herrería artesanal y la calidez de la piedra centenaria.</p>
+                equilibrio perfecto entre el legado tradicional cordobés y el confort contemporáneo.</p>
+            <br><br>
+            <p><b>Ideal para:</b>
+            <ul class="mi-lista">
+                <li> ✓ Amantes del flamenco y la cultura española</li>
+                <li> ✓ Viajeros que valoran experiencias sobre el silencio absoluto</li>
+                <li> ✓ Grupos de amigos y parejas buscando atmósfera vibrante</li>
+                <li> ✓ Quienes quieren dormir donde late el corazón de Córdoba</li>
+            </ul>
+            </p>
+            <p><b>No recomendado para:</b>
+            <ul class="mi-lista">
+                <li>✗ Huéspedes sensibles al ruido o que necesiten descanso absoluto</li>
+                <li>✗ Familias con bebés/niños pequeños</li>
+                <li>✗ Viajeros con horarios estrictos de sueño</li>
+            </ul>
+            </p>
+            <p><b>Facilitamos tu experiencia en La Chiquita de Quini:</b>
+            <ul class="mi-lista">
+                <li>• Acceso preferente a nuestros espectáculos</li>
+                <li>• Descuento 10% en nuestro restaurante </li>
+            </ul>
+            </p>
             <a href="#reserva" class="link-styled">VERIFICAR DISPONIBILIDAD →</a>
 
         </div>
@@ -374,11 +395,16 @@
             <div class="divider"></div>
         </div>
         <div class="rooms-intro reveal">
-            <p class="gold-text">DESCANSO Y DISTINCIÓN</p>
+            <p class="gold-text">EXPERIENCIA Y AUTENTICIDAD</p>
             <p class="rooms-description">
-                Nuestras habitaciones han sido diseñadas como refugios de serenidad en el corazón de la Judería.
-                Combinamos la arquitectura original del <b>siglo XVI</b> con un interiorismo contemporáneo
-                donde cada detalle está pensado para ofrecerte una experiencia única en Córdoba.
+                Nuestras habitaciones son tu base para vivir la auténtica experiencia cordobesa.
+                Ubicadas en un palacio del siglo XVI en plena Judería, combinan el encanto histórico
+                con comodidades modernas, diseñadas para viajeros que buscan sumergirse en la cultura
+                local, no solo observarla.
+                <br>
+                Cada habitación mantiene la arquitectura original del siglo XVI con toques contemporáneos y todo el
+                confort moderno
+                (aire acondicionado/calefacción, SmartTV, WiFi de alta velocidad, baño privado).
             </p>
         </div>
         <div class="room-grid">
@@ -425,6 +451,9 @@
                 recetas que han perdurado por generaciones.</p>
             <p>Desde el salmorejo más auténtico hasta los aromas de la cocina sefardí, cada plato se sirve bajo el
                 artesonado de madera de nuestro palacio.</p>
+            <p>Desde tus ventanas escucharás el rasgueo de guitarras flamencas, las conversaciones
+                animadas del patio andaluz, y sentirás la vibración de "La Chiquita de Quini",
+                nuestro reconocido restaurante con espectáculos en vivo (miércoles-domingo, 16:00-01:00).</p>
             <a href="https://latabernadequini.es/" class="link-styled">VER CARTA Y RESERVAR →</a>
         </div>
         <div class="history-image dining-image"></div>
@@ -474,35 +503,202 @@
             <div class="divider"></div>
         </div>
 
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3>¿Cómo se realiza el check-in?</h3>
-                <p>Funcionamos con un sistema de <b>acceso autónomo por códigos</b>. El día de tu llegada recibirás las
-                    claves necesarias para entrar tanto al palacio como a tu habitación, ofreciéndote total libertad de
-                    horario.</p>
+        <div class="faq-accordion">
+
+            <!-- PREGUNTA 1 — CRÍTICA -->
+            <div class="faq-item faq-critical">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Hay música o ruido por las noches? <span class="faq-badge">Importante</span></span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p><strong>Sí.</strong> Nuestro hotel alberga "La Chiquita de Quini", reconocida gastrotaberna con
+                        espectáculos de flamenco en vivo de <strong>jueves a domingo (17:00–01:00 aprox)</strong>.</p>
+                    <p>El ambiente es festivo, cultural y auténticamente cordobés. El sonido de guitarras, cante
+                        flamenco y conversaciones animadas es audible en la mayoría de las habitaciones.</p>
+                    <div class="faq-highlight faq-highlight--green">
+                        <strong>✓ Ideal para:</strong> Amantes de la cultura andaluza, grupos de amigos, parejas que
+                        valoran experiencias auténticas, viajeros que buscan vivir Córdoba en lugar de solo visitarla.
+                    </div>
+                    <div class="faq-highlight faq-highlight--red">
+                        <strong>✗ No recomendado para:</strong> Personas muy sensibles al ruido, bebés o niños pequeños,
+                        quienes necesitan dormir antes de las 23:00 h, viajeros con horarios estrictos de sueño.
+                    </div>
+                    <p>Total transparencia
+                        antes de tu reserva. Si tienes dudas, <strong>contáctanos antes de reservar</strong>.</p>
+                </div>
             </div>
+
+            <!-- PREGUNTA 2 -->
             <div class="faq-item">
-                <h3>¿Hay recepción presencial 24 horas?</h3>
-                <p>No disponemos de recepción física continua. Sin embargo, estamos localizables las 24 horas vía
-                    WhatsApp y teléfono para cualquier asistencia que necesites durante tu estancia.</p>
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Cómo se realiza el check-in?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Funcionamos con un <strong>sistema de acceso autónomo por códigos</strong>, ofreciéndote total
+                        libertad de horario.</p>
+                    <ul class="faq-list">
+                        <li><strong>3–5 días antes de tu llegada:</strong> Recibirás por email/WhatsApp las claves de
+                            acceso al palacio y a tu habitación.</li>
+                        <li><strong>A tu llegada:</strong> Introduce el código en la entrada principal y dirígete
+                            directamente a tu habitación.</li>
+                        <li><strong>Disponibilidad 24/7:</strong> Estamos localizables por WhatsApp y teléfono para
+                            cualquier asistencia.</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- PREGUNTA 3 -->
             <div class="faq-item">
-                <h3>¿Es una zona tranquila?</h3>
-                <p>Estamos en el epicentro del ocio de Córdoba. Por las tardes y noches podrás disfrutar del ambiente y
-                    la música en directo de nuestra <b>Gastrotaberna La Chiquita de Quini</b>. Es ideal para quienes
-                    buscan vivir el pulso vibrante de la ciudad.</p>
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Horario de entrada y salida?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p><strong>Check-in:</strong> A partir de las 14:00 horas.</p>
+                    <p><strong>Check-out:</strong> Antes de las 12:00 horas.</p>
+                    <p>Si necesitas check-in anticipado o check-out tardío, <strong>contáctanos con antelación</strong>.
+                        Según
+                        disponibilidad, podemos ofrecerlo sin coste adicional o con un pequeño suplemento.</p>
+                    <p><strong>Almacenaje de equipaje:</strong> Disponible sin coste si llegas antes de las 14:00 o
+                        sales después de las 12:00.</p>
+                </div>
             </div>
+
+            <!-- PREGUNTA 4 -->
             <div class="faq-item">
-                <h3>¿Ofrecen servicio de desayuno?</h3>
-                <p>No servimos desayunos en el hotel, pero nuestra ubicación privilegiada te permite disfrutar de
-                    las
-                    mejores cafeterías y pastelerías de la Judería a solo unos pasos.</p>
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Hay parking disponible?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>No disponemos de parking propio. La Judería es zona peatonal/restringida al tráfico y no puedes
+                        cargar/descargar equipaje en la puerta del hotel.</p>
+                    <p><strong>Parkings públicos recomendados cerca:</strong></p>
+                    <ul class="faq-list">
+                        <li><strong>Parking Mezquita-Catedral</strong> — 200 m (19 €/día)</li>
+                        <li><strong>Parking La Ribera</strong> — 700 m (19 €/día)</li>
+                        <li><strong>Aparcamiento gratuito</strong> — 1.500 m</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- PREGUNTA 5 -->
             <div class="faq-item">
-                <h3>¿Horario de entrada y salida?</h3>
-                <p>El horario de entrada es a partir de las 14:00 horas y el de salida es antes de las 12:00 horas.
-                </p>
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Ofrecen servicio de desayuno?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p><strong>No servimos desayunos en el hotel</strong>. Pero nuestra ubicación privilegiada en plena
+                        Judería te permite
+                        disfrutar de las mejores cafeterías y pastelerías tradicionales cordobesas a solo unos pasos.
+                    </p>
+                </div>
             </div>
+
+            <!-- PREGUNTA 6 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Hay WiFi gratuito?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p><strong>Sí.</strong> WiFi de alta velocidad gratuito en todas las habitaciones y zonas comunes
+                        del palacio.</p>
+                    <p><strong>Velocidad:</strong> 600 Mbps simétricos — adecuado para multidispositivos, streaming 4K,
+                        videollamadas y trabajo remoto.</p>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 7 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿El hotel es accesible para personas con movilidad reducida?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p><strong>Lamentablemente no.</strong> Nuestro palacio del siglo XVI conserva su arquitectura
+                        original, incluyendo escaleras estrechas, desniveles y espacios reducidos típicos de la época.
+                    </p>
+                    <p><strong>No disponemos de:</strong></p>
+                    <ul class="faq-list">
+                        <li>Ascensor</li>
+                        <li>Rampas de acceso</li>
+                        <li>Habitaciones adaptadas para sillas de ruedas</li>
+                        <li>Baños adaptados</li>
+                    </ul>
+                    <p>Si tienes necesidades específicas de movilidad, contáctanos antes de reservar.</p>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 8 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Cuál es la política de cancelación?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <ul class="faq-list">
+                        <li><strong>Hasta 2 días antes del check-in:</strong> Cancelación gratuita, reembolso 100%.</li>
+                        <li><strong>Dentro de 2 días antes del check-in y No-show:</strong> Cargo del 100%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 9 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Hay recepción presencial 24 horas?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>No disponemos de recepción física continua. Operamos con un sistema de check-in autónomo que te
+                        ofrece máxima libertad de horario.</p>
+                    <p>Estamos localizables <strong>las 24 horas</strong> vía WhatsApp y teléfono para cualquier
+                        asistencia:</p>
+                    <ul class="faq-list">
+                        <li>Problemas con el código de acceso</li>
+                        <li>Consultas sobre la habitación o servicios</li>
+                        <li>Cualquier emergencia o necesidad</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 10 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Aceptan mascotas?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p><strong>No</strong>, no aceptamos mascotas en el hotel.
+                    </p>
+                    <p>Debido a nuestros espectáculos en vivo nocturnos, las mascotas no son sensibles a ruidos fuertes
+                        (guitarras, palmas, cante flamenco).</p>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 11 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Hay edad mínima para alojarse?</span>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>No hay edad mínima. Aceptamos huéspedes de todas las edades.</p>
+                    <div class="faq-highlight faq-highlight--gold">
+                        <strong>Recomendación:</strong> Por nuestros espectáculos de flamenco en vivo nocturnos (hasta
+                        01:00), el hotel es especialmente adecuado para mayores de 16 años y familias con niños mayores
+                        de 8 años no sensibles al ruido.
+                    </div>
+                    <p><strong>No recomendado para:</strong> Bebés o niños pequeños (0–7 años) que necesiten rutinas
+                        estrictas de sueño.</p>
+                    <p><em>Si viajas con menores y tienes dudas, contáctanos para asesorarte.</em></p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -515,7 +711,8 @@
                 </a>
                 <p class="footer-tagline">La esencia de la Córdoba histórica en un palacio del s. XVI.</p>
                 <div class="trust-badges">
-                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Valoración excelente en Google Reviews">
+                    <img src="https://img.icons8.com/color/48/google-logo.png"
+                        alt="Valoración excelente en Google Reviews">
                     <img src="https://img.icons8.com/color/48/tripadvisor.png" alt="Recomendado en TripAdvisor">
                 </div>
             </div>
@@ -531,15 +728,25 @@
                 <h3>EXPLORA</h3>
                 <ul class="footer-links">
                     <li><a href="#habitaciones">Habitaciones</a></li>
-                    <li><a href="#restaurante">Gastrotaberna</a></li>
                     <li><a href="#">Galería</a></li>
-                    <li><a href="/politica-privacidad.html">Política de privacidad</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="https://latabernadequini.es?utm_source=hotelachiquita&utm_medium=referral&utm_campaign=web_hermana"
+                            target="_blank" rel="noopener">
+                            Visita La Chiquita de Quini
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2026 Hotel La Chiquita. Todos los derechos reservados.</p>
+            <p>
+                <a href="/aviso-legal.html">Aviso Legal</a> ·
+                <a href="/politica-privacidad.html">Política de Privacidad</a> ·
+                <a href="/politica-cookies.html">Política de Cookies</a>
+            </p>
+            <p>Diseño y desarrollo web por <a href="https://camiloplaza-cordoba.netlify.app/" target="_blank" rel="noopener">Camilo Plaza</a></p>
         </div>
     </footer>
 

@@ -297,7 +297,6 @@ footer {
     }
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 1200px) {
     .room-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -324,10 +323,8 @@ footer {
 
 /* --- AJUSTES GASTRONOMÍA (Simetría con Historia) --- */
 
-/* Clase para invertir el orden en escritorio y mantener espacio */
 .dining-alt {
     background-color: white;
-    /* Un ligero cambio de tono para diferenciar secciones */
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
@@ -342,12 +339,10 @@ footer {
     /* Sombra hacia el otro lado para dinamismo */
 }
 
-/* Responsive para la sección invertida */
 @media (max-width: 768px) {
     .dining-alt {
         display: flex;
         flex-direction: column-reverse;
-        /* En móvil la imagen vuelve a estar arriba o abajo según prefieras */
         padding: 5rem 10%;
     }
 
@@ -405,13 +400,11 @@ footer {
     padding: 0 5%;
     position: relative;
     z-index: 200;
-    /* Subimos de 100 a 200 */
     background: transparent;
 }
 
 .booking-bar {
     background: white;
-    /* Confirma que sigue siendo white */
     padding: 1.5rem 2.5rem;
     display: flex;
     align-items: center;
@@ -421,9 +414,7 @@ footer {
     width: 100%;
     max-width: 1000px;
     position: relative;
-    /* Añade esto */
     z-index: 200;
-    /* Añade esto */
 }
 
 .booking-field {
@@ -475,7 +466,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Responsive para la barra */
 @media (max-width: 900px) {
     .booking-bar {
         flex-direction: column;
@@ -515,10 +505,8 @@ footer {
 /* Añade un margen superior al desplazarse por anclaje */
 #checkin {
     scroll-margin-top: 120px;
-    /* Ajusta este valor según la altura de tu menú */
 }
 
-/* Si quieres que se aplique a todas las secciones del menú */
 section[id] {
     scroll-margin-top: 100px;
 }
@@ -570,7 +558,6 @@ section[id] {
     opacity: 0.5;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;
@@ -649,7 +636,6 @@ section[id] {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem;
-    /* Margen inferior para separarlo de las tarjetas */
     padding: 0 5%;
 }
 
@@ -666,7 +652,6 @@ section[id] {
     margin-bottom: 0.5rem;
 }
 
-/* Ajuste para móviles */
 @media (max-width: 768px) {
     .rooms-description {
         font-size: 1rem;
@@ -742,7 +727,6 @@ section[id] {
     color: var(--madera);
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     .reviews-grid {
         grid-template-columns: 1fr;
@@ -755,7 +739,6 @@ section[id] {
 
 #faq h2 {
     color: var(--madera);
-    /* O el color que prefieras, por ejemplo: #B87333 */
 }
 
 .lang-switch {
@@ -776,17 +759,14 @@ section[id] {
 .logo img {
     display: block;
     max-height: 50px;
-    /* Ajusta según el diseño de tu logo */
     width: auto;
     transition: var(--transicion);
 }
 
-/* Efecto visual al pasar el ratón */
 .logo:hover img {
     transform: scale(1.05);
 }
 
-/* Ajuste para móviles */
 @media (max-width: 768px) {
     .logo img {
         max-height: 40px;
@@ -965,7 +945,7 @@ section[id] {
     }
 }
 
-/* --- FLATPICKR — Personalización Hotel La Chiquita --- */
+/* --- FLATPICKR — Personalización --- */
 .flatpickr-calendar {
     font-family: 'Montserrat', sans-serif;
     border: 1px solid rgba(184, 115, 51, 0.3);
@@ -1108,7 +1088,6 @@ section[id] {
     transform: translateY(-1px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .back-to-top {
         bottom: 5.5rem;
@@ -1117,4 +1096,249 @@ section[id] {
         height: 44px;
         font-size: 18px;
     }
+}
+
+.mi-lista {
+    list-style: none;
+}
+
+.rooms .section-header h2 {
+    color: var(--cobre);
+}
+
+.footer-column .logo img {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(47%) saturate(600%) hue-rotate(355deg) brightness(95%);
+}
+
+.faq-accordion {
+    max-width: 860px;
+    margin: 0 auto;
+}
+ 
+.faq-item {
+    border-bottom: 1px solid rgba(184, 115, 51, 0.2);
+    transition: var(--transicion);
+}
+ 
+.faq-item:first-child {
+    border-top: 1px solid rgba(184, 115, 51, 0.2);
+}
+ 
+.faq-critical {
+    border-left: 3px solid var(--cobre);
+    padding-left: 0;
+}
+ 
+.faq-critical .faq-question {
+    padding-left: calc(1.5rem - 3px);
+}
+ 
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--madera);
+    letter-spacing: 0.5px;
+    transition: var(--transicion);
+}
+ 
+.faq-question:hover {
+    color: var(--cobre);
+}
+ 
+.faq-item[data-open="true"] .faq-question {
+    color: var(--cobre);
+}
+ 
+.faq-icon {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--cobre);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    transition: var(--transicion);
+}
+ 
+.faq-icon::before,
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--cobre);
+    border-radius: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ 
+.faq-icon::before {
+    width: 8px;
+    height: 1.5px;
+}
+ 
+.faq-icon::after {
+    width: 1.5px;
+    height: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+ 
+.faq-item[data-open="true"] .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+}
+ 
+.faq-item[data-open="true"] .faq-icon {
+    background: var(--cobre);
+}
+ 
+.faq-item[data-open="true"] .faq-icon::before,
+.faq-item[data-open="true"] .faq-icon::after {
+    background: var(--blanco-hueso);
+}
+ 
+.faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+ 
+.faq-answer[hidden] {
+    display: block !important;
+    max-height: 0;
+}
+ 
+.faq-item[data-open="true"] .faq-answer {
+    max-height: 800px;
+}
+ 
+.faq-answer-inner {
+    padding: 0 1.5rem 1.5rem;
+}
+ 
+.faq-answer p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+ 
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+ 
+.faq-list {
+    list-style: none;
+    margin: 0.8rem 0;
+}
+ 
+.faq-list li {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 0.4rem 0 0.4rem 1.2rem;
+    position: relative;
+    line-height: 1.6;
+}
+ 
+.faq-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--cobre);
+    font-weight: bold;
+}
+ 
+.faq-highlight {
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    border-left: 3px solid var(--cobre);
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+ 
+.faq-highlight strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+ 
+.faq-highlight--green {
+    background: rgba(184, 115, 51, 0.06);
+    border-color: #5a8a5a;
+    color: #3a5a3a;
+}
+ 
+.faq-highlight--green strong {
+    color: #3a5a3a;
+}
+ 
+.faq-highlight--red {
+    background: rgba(180, 60, 60, 0.06);
+    border-color: #8a4a4a;
+    color: #5a3030;
+}
+ 
+.faq-highlight--red strong {
+    color: #5a3030;
+}
+ 
+.faq-highlight--gold {
+    background: rgba(184, 115, 51, 0.08);
+    border-color: var(--cobre);
+    color: var(--madera);
+}
+ 
+.faq-badge {
+    display: inline-block;
+    background: var(--cobre);
+    color: var(--blanco-hueso);
+    font-size: 0.6rem;
+    padding: 2px 7px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+ 
+@media (max-width: 768px) {
+    .faq-question {
+        font-size: 1rem;
+        padding: 1.2rem 1rem;
+    }
+ 
+    .faq-critical .faq-question {
+        padding-left: calc(1rem - 3px);
+    }
+ 
+    .faq-answer-inner {
+        padding: 0 1rem 1.2rem;
+    }
+}
+
+.footer-bottom a {
+    color: rgba(245, 242, 237, 0.5);
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: var(--transicion);
+}
+
+.footer-bottom a:hover {
+    color: var(--cobre);
+}
+
+.footer-bottom p {
+    margin-top: 0.5rem;
 }

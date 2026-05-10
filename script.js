@@ -28,7 +28,7 @@ function trackEvent(eventName, params = {}) {
 document.addEventListener('DOMContentLoaded', () => {
 
     // DATEPICKER DE RANGO — Flatpickr
-    
+
     const dateRangeInput = document.getElementById('dateRange');
 
     if (dateRangeInput) {
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ANIMACIONES DE APARICIÓN (REVEAL)
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // MENÚ HAMBURGER
-    
+
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -220,6 +220,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 source: 'floating_button'
             });
         });
+    }
+
+    // ── FAQ ACORDEÓN ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.dataset.open === 'true';
+
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.dataset.open = 'false';
+                i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.dataset.open = 'true';
+                btn.setAttribute('aria-expanded', 'true');
+                trackEvent('faq_open', { question: btn.querySelector('span').textContent.trim() });
+            }
+        });
+    });
+
+    const firstCritical = document.querySelector('.faq-item.faq-critical');
+    if (firstCritical) {
+        firstCritical.dataset.open = 'true';
+        firstCritical.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
     }
 
 });
